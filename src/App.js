@@ -32,25 +32,41 @@ const App = () => {
 
 // function for chekinh the winner
   const checkIsWinner = () => {
+   
     if(itemArray[0] == itemArray[1] && itemArray[0]==itemArray[2] && itemArray[0]!="empty" ){
       setWinMessage(`${itemArray[0]} is winner `)
     }
    else if(itemArray[3] == itemArray[4] && itemArray[3]==itemArray[5] && itemArray[3]!="empty" ){
-      setWinMessage(`${itemArray[0]} is winner `)
+      setWinMessage(`${itemArray[3]} is winner `)
     }
     else if(itemArray[6] == itemArray[7] && itemArray[6]==itemArray[8] && itemArray[6]!="empty" ){
+      setWinMessage(`${itemArray[6]} is winner `)
+    }
+    else if(itemArray[0] == itemArray[3] && itemArray[0]==itemArray[6] && itemArray[0]!="empty" ){
       setWinMessage(`${itemArray[0]} is winner `)
     }
+    else if(itemArray[1] == itemArray[4] && itemArray[1]==itemArray[7] && itemArray[1]!="empty" ){
+      setWinMessage(`${itemArray[0]} is winner `)
+    }
+    else if(itemArray[2] == itemArray[5] && itemArray[2]==itemArray[8] && itemArray[2]!="empty" ){
+      setWinMessage(`${itemArray[0]} is winner `)
+    }
+
     else if(itemArray[0] == itemArray[4] && itemArray[0]==itemArray[8] && itemArray[0]!="empty" ){
       setWinMessage(`${itemArray[0]} is winner `)
     }
     else if(itemArray[2] == itemArray[4] && itemArray[2]==itemArray[6] && itemArray[2]!="empty" ){
-      setWinMessage(`${itemArray[0]} is winner `)
+      setWinMessage(`${itemArray[2]} is winner `)
     }
-    // else{
-    //   setWinMessage(`Game Deow!`)
-    // }
-
+   
+   else {
+    let rse =  itemArray.every((ele)=>  ele!="empty")
+  //  console.log(rse)
+    if(rse==true){
+      setWinMessage(`Game Draw`)
+    }
+   
+   }
   };
 
 
@@ -75,7 +91,8 @@ const App = () => {
   return (
     <Container className="p-5">
       <ToastContainer position="bottom-center" />
-      <Row>
+      {/* if we remove the below row then not any problrm  */}
+      <Row> 
         <Col md={6} className="offset-md-3">
           {winMessage ? (
             <div className="mb-2 mt-2">
