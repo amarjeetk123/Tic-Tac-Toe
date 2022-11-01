@@ -1,22 +1,27 @@
 body {
   background-color: #000000;
 }
-.grid{
+
+.grid {
   display: grid;
   grid-template-columns: 1fr 1fr 1fr;
   grid-gap: 15px;
 }
 
-.box{
-width: auto;
-height: 100px;
+.box {
+  width: auto;
+  height: 100px;
   display: flex;
   justify-content: center;
   align-items: center;
-  background-color: yellow;
+  background-color: rgb(207, 207, 18);
 }
 
-.icon{
+.icon {
   font-size: 35px;
   color: #000000;
+}
+
+.box :nth-child(5) {
+  background-color: red;
 }

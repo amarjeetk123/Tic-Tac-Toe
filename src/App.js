@@ -76,13 +76,18 @@ const App = () => {
       return toast(winMessage, { type: "success" })
     }
 
+  else{
     if (itemArray[itemNumber] === "empty") {
+      console.log(itemNumber)
       itemArray[itemNumber] = isCross ? "cross" : "circle"
       setIsCross(!isCross)
 
     } else {
+      console.log(itemNumber)
       return toast("already filled", { type: "error" })
+      
     }
+  }
 
     checkIsWinner()
 
@@ -94,10 +99,13 @@ const App = () => {
       {/* if we remove the below row then not any problrm  */}
       <Row> 
         <Col md={6} className="offset-md-3">
+ 
           {winMessage ? (
+            //  return toast("already filled", { type: "error" })
             <div className="mb-2 mt-2">
               <h1 className="text-primary text-uppercase text-center">{winMessage}</h1>
               <Button color="success" block onClick={reloadGame} > Reload the game!</Button>
+              
             </div>
 
           ) : (
@@ -105,6 +113,7 @@ const App = () => {
           )}
           <div className="grid">
             {itemArray.map((item, index) => (
+              
                 <Card onClick={() => changeItem(index)} >
                   <CardBody className="box">
                     <Icon name={item} />
