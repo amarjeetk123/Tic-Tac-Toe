@@ -1,5 +1,9 @@
+@import url('https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@1,300&family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;1,100;1,300;1,400;1,500;1,700&display=swap');
 body {
-  background-color: #000000;
+  background-color: #03203C;
+  font-family:Roboto ;
+ 
+  
 }
 
 .grid {
@@ -15,8 +19,13 @@ body {
   justify-content: center;
   align-items: center;
   background-color: rgb(207, 207, 18);
+  cursor: pointer;
 }
-
+.box:hover{
+  /* background-color: aqua; */
+  transition: 0.7s;
+  background-color: #E07C24;
+}
 .icon {
   font-size: 35px;
   color: #000000;
